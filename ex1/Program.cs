@@ -6,8 +6,18 @@ namespace ex1
     {
        static void Main(string[] args)
         {
-            int valeurATrouver = new Random().Next(0, 100);
-            int nombreDeCoups = 0;
+            var Game = new Game();
+            Game.Play();
+
+        }
+    }
+
+    public class Game
+    {
+        private readonly int valeurATrouver = new Random().Next(0, 100);
+        int nombreDeCoups = 0;
+        public void Play()
+        {
             bool trouve = false;
             Console.WriteLine("Veuillez saisir un nombre compris entre 0 et 100 (exclu)");
             while (!trouve)
@@ -30,7 +40,14 @@ namespace ex1
                 else
                     Console.WriteLine("La valeur saisie est incorrecte, veuillez recommencer ...");
             }
-            Console.WriteLine("Vous avez trouvé en " + nombreDeCoups + " coup(s)");
+            End();
         }
+
+        public void End(){
+            Console.WriteLine("Vous avez trouvé en " + nombreDeCoups + " coup(s)");
+            Console.ReadLine();
+            Console.WriteLine("Fin du jeu");
+        }
+
     }
 }
