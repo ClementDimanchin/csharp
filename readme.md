@@ -1,2 +1,2 @@
-dotnet new console --force /n
+dotnet new console --force <br>
 dotnet run                         
